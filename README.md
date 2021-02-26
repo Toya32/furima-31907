@@ -20,24 +20,24 @@
 
 ## items テーブル
 
-| Column       | Type         | Options                        |
-| ------------ | ------------ | ------------------------------ |
-| product_name | string       | null: false                    |
-| category     | string       | null: false                    |
-| seller       | string       | null: false, unique: true      |
-| description  | string       | null: false                    |
-| state        | string       | null: false                    |
-| delivery_fee | string       | null: false                    |
-| area_id      | integer      | null: false                    |
-| shipping     | integer      | null: false                    |
-| price        | integer      | null: false                    |
+| Column          | Type         | Options                        |
+| --------------- | ------------ | ------------------------------ |
+| product_name    | string       | null: false                    |
+| seller          | string       | null: false, unique: true      |
+| description     | string       | null: false                    |
+| category_id     | integer      | null: false                    |
+| state_id        | integer      | null: false                    |
+| delivery_fee_id | integer      | null: false                    |
+| area_id         | integer      | null: false                    |
+| shipping_id     | integer      | null: false                    |
+| price           | integer      | null: false                    |
 
 ### Association
 
   belongs_to :users
   has_one    :buys_items
 
-## address テーブル
+## addresses テーブル
 
 | Column            | Type        | Options                        |
 | --------------    | ----------- | ------------------------------ |
@@ -45,11 +45,13 @@
 | prefectures_id    | integer     | null: false                    |
 | municipalities    | string      | null: false                    |
 | address           | string      | null: false                    |
+| building_name     | string      |                                |
 | phone_number      | string      | null: false                    |
 
 ### Association
 
 - belongs_to :buys_items
+- references :buys_items, foreign_key: true
 
 
 ## buys_items テーブル
@@ -61,6 +63,6 @@
 
 ### Association
 
-- belongs_to :users
-- belongs_to :items
-- has_one    :address
+- belongs_to :user
+- belongs_to :item
+- has_one    :addresses
