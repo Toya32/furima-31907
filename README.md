@@ -23,7 +23,7 @@
 | Column          | Type         | Options                        |
 | --------------- | ------------ | ------------------------------ |
 | product_name    | string       | null: false                    |
-| seller          | string       | null: false, unique: true      |
+| user            | references   | null: false, foreign_key: true |
 | description     | string       | null: false                    |
 | category_id     | integer      | null: false                    |
 | state_id        | integer      | null: false                    |
@@ -34,8 +34,8 @@
 
 ### Association
 
-  belongs_to :users
-  has_one    :buys_items
+  belongs_to :user
+  has_one    :buys_item
 
 ## addresses テーブル
 
@@ -47,11 +47,12 @@
 | address           | string      | null: false                    |
 | building_name     | string      |                                |
 | phone_number      | string      | null: false                    |
+| buys_item         | references  | null: false, foreign_key: true |
+
 
 ### Association
 
-- belongs_to :buys_items
-- references :buys_items, foreign_key: true
+- belongs_to :buys_item
 
 
 ## buys_items テーブル
@@ -65,4 +66,4 @@
 
 - belongs_to :user
 - belongs_to :item
-- has_one    :addresses
+- has_one    :address
