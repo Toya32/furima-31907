@@ -15,16 +15,16 @@
 
 ### Association
 
-- has_many :buys_item
+- has_many :buys_items
 - has_many :items
 
 ## items テーブル
 
 | Column          | Type         | Options                        |
 | --------------- | ------------ | ------------------------------ |
-| product_name    | string       | null: false                    |
+| name            | string       | null: false                    |
 | user            | references   | null: false, foreign_key: true |
-| description     | string       | null: false                    |
+| description     | text         | null: false                    |
 | category_id     | integer      | null: false                    |
 | state_id        | integer      | null: false                    |
 | delivery_fee_id | integer      | null: false                    |
