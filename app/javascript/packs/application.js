@@ -4,7 +4,11 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
+<<<<<<< Updated upstream
 // require("turbolinks").start()
+=======
+//require("turbolinks").start() //削除
+>>>>>>> Stashed changes
 require("@rails/activestorage").start()
 require("channels")
 
