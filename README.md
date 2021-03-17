@@ -4,7 +4,7 @@
 
 | Column               | Type     | Options                   |
 | ----------           | ------   | --------------------------|
-| nick_name            | string   | null: false               |
+| nickname             | string   | null: false               |
 | birthday             | date     | null: false               |
 | email                | string   | null: false, unique: true |
 | encrypted_password   | string   | null: false               |
@@ -25,12 +25,12 @@
 | name            | string       | null: false                    |
 | user            | references   | null: false, foreign_key: true |
 | description     | text         | null: false                    |
+| price           | integer      | null: false                    |
 | category_id     | integer      | null: false                    |
 | state_id        | integer      | null: false                    |
 | delivery_fee_id | integer      | null: false                    |
 | area_id         | integer      | null: false                    |
 | shipping_id     | integer      | null: false                    |
-| price           | integer      | null: false                    |
 
 ### Association
 
